@@ -1,0 +1,20 @@
+{{outlet}}
+<div>{{pluralize model.countActive "Aucun service séléctionné" "service séléctionné" "services séléctionnés"}} : </div>
+<div>Montant total: {{model.sumActive}}</div>
+<ul class="list-group">
+{{#each model.services as |service|}}
+  <li class="list-group-item list-group-item-secondary {{if service.active 'active'}}"
+    {{action "toggleActive" service}}>
+    {{service.name}} {{service.price}}
+  </li>
+{{/each}}
+</ul>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+       <div class="input-group-text">
+         <input type="checkbox" aria-label="Checkbox for following text input">
+       </div>
+</div>
+{{input class="form-control" value=model.codePromo}}
+</div>
+<div>{{model.txReduction}}</div>
