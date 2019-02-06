@@ -1,0 +1,20 @@
+<h1>Exercice 1 : Note</h1>
+{{textarea value=model.content maxlength=model.MAX}}
+
+MAX : {{model.MAX}}<br>
+size : {{model.size}}
+
+<div class="alert alert-{{model.style}}">il vous reste {{model.size}} cractères disponible </div>
+
+<button {{action "save" model}} class="btn btn-primary">Enregistrer</button>
+
+{{#if model.info}}
+<div class="alert alert-info">{{model.info}} </div>
+{{/if}}
+
+
+
+<ul>
+  <li>{{#link-to "application"}} Retour{{/link-to}}</li>
+</ul>
+{{outlet}}
