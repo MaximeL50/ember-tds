@@ -1,0 +1,18 @@
+<body style ="background-color: #ed969e">
+<div class="container">
+  <div class="row">
+    <div class = "col-sm">
+    {{multi-select elements=model.dispoItems selectedIds = model.dispoItemsIds_}}
+    </div>
+    <div class="col-sm">
+      {{#bs-button block}}{{fa-icon "arrow-alt-from-left"}}{{/bs-button}} <!--onClick(action "submit")-->
+      {{#bs-button block}}{{fa-icon "arrow-alt-from-left"}}{{/bs-button}} <!--onClick(action "submit")-->
+
+    </div>
+    <div class = "col-sm">
+      {{multi-select elements=includeItems}}
+    </div>
+  </div>
+</div>
+  {{outlet}}
+</body>
