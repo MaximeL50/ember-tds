@@ -1,34 +1,29 @@
-<h2> Contacts </h2>
-<ul>
 
-  <table class="table">
-    <thead>
+<h2> Contact </h2>
+<table class = "table">
+  <thead class="thead-dark">
     <tr>
-      <th scope="col">NOM</th>
-      <th scope="col">PRENOM</th>
-      <th scope="col">EMAIL</th>
-      <th scope="col">ACTIONS</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+<tbody>
     {{#each model.datas as |contact|}}
     <tr>
       <td>{{contact.nom}}</td>
       <td>{{contact.prenom}}</td>
       <td>{{contact.email}}</td>
-      <td>
-        <button class="btn btn-secondary btn-small" {{ action "edit"}}>{{fa-icon "edit"}}</button>
-        <button class="btn btn-danger btn-small"{{ action "delete"}} >{{fa-icon "remove"}}</button>
-      </td>
+      <td><button  class="btn btn-dark btn-small">{{fa-icon "edit"}}</button>
+      <button {{action "delete" contact}} class="btn btn-danger btn-small">{{fa-icon "remove"}}</button>
+    </td>
     </tr>
     {{/each}}
-    </tbody>
-  </table>
-
-</ul>
-
-{{#link-to "contacts.add" class="btn btn-primary"}}
-  Ajouter un contact...
+</tbody>
+</table>
+{{#link-to 'contacts.add' class="btn btn-primary"}}
+ajouter un contact
 {{/link-to}}
 
 {{outlet}}

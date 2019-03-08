@@ -100906,7 +100906,7 @@ return Popper;
   var _default = "3.7.0";
   _exports.default = _default;
 });
-;define('ember-get-config/index', ['exports', 'td3/config/environment'], function (exports, _environment) {
+;define('ember-get-config/index', ['exports', 'td4/config/environment'], function (exports, _environment) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {

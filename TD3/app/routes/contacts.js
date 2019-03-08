@@ -1,27 +1,25 @@
 import Route from '@ember/routing/route';
-import {computed, get} from '@ember/object';
-import EmberObject from '@ember/object';
+import EmberObject,{computed}from'@ember/object';
+let Contacts = EmberObject.extend({
+datas:null
 
-
-const Contact  = EmberObject.extend({
-  datas : null,
-  contacts : computed('datas@each.isDeleted', function(){
-    return this.datas.filter(contact=>!this.deletds.include(get(contact, "nom")));
-  }),
-  deletds : null,
-  deletedsCount : 0
 });
 
+
 export default Route.extend({
-  model() {
-    return Contact.create({
-      datas: this.store.findAll('contact'),
-      deletds: []
+  model(){
+
+    return Contacts.create({
+      datas : this.store.findAll('contact')
     });
   },
   actions:{
-    delete(contact){
-      contact.deleteRecord();
+    delete(content){
+      //content.deleteRecord();
+      content.destroyRecord();
     }
   }
+
+
+
 });

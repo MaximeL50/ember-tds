@@ -1,6 +1,6 @@
 'use strict';
 
-define("td3/tests/lint/app.lint-test", [], function () {
+define("td4/tests/lint/app.lint-test", [], function () {
   "use strict";
 
   QUnit.module('ESLint | app');
@@ -12,10 +12,6 @@ define("td3/tests/lint/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'app.js should pass ESLint\n\n');
   });
-  QUnit.test('controllers/contacts.js', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'controllers/contacts.js should pass ESLint\n\n2:9 - \'set\' is defined but never used. (no-unused-vars)\n2:14 - \'get\' is defined but never used. (no-unused-vars)\n8:12 - \'contact\' is defined but never used. (no-unused-vars)\n11:20 - \'deleteds\' is defined but never used. (no-unused-vars)');
-  });
   QUnit.test('controllers/contacts/add.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/contacts/add.js should pass ESLint\n\n');
@@ -24,9 +20,9 @@ define("td3/tests/lint/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'models/contact.js should pass ESLint\n\n');
   });
-  QUnit.test('models/contacts.js', function (assert) {
+  QUnit.test('models/person.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'models/contacts.js should pass ESLint\n\n');
+    assert.ok(true, 'models/person.js should pass ESLint\n\n');
   });
   QUnit.test('resolver.js', function (assert) {
     assert.expect(1);
@@ -38,7 +34,7 @@ define("td3/tests/lint/app.lint-test", [], function () {
   });
   QUnit.test('routes/contacts.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'routes/contacts.js should pass ESLint\n\n');
+    assert.ok(false, 'routes/contacts.js should pass ESLint\n\n2:21 - \'computed\' is defined but never used. (no-unused-vars)');
   });
   QUnit.test('routes/contacts/add.js', function (assert) {
     assert.expect(1);
@@ -48,33 +44,29 @@ define("td3/tests/lint/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'routes/contacts/edit.js should pass ESLint\n\n');
   });
-  QUnit.test('serializers/application.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'serializers/application.js should pass ESLint\n\n');
-  });
 });
-define("td3/tests/lint/templates.template.lint-test", [], function () {
+define("td4/tests/lint/templates.template.lint-test", [], function () {
   "use strict";
 
   QUnit.module('TemplateLint');
-  QUnit.test('td3/templates/application.hbs', function (assert) {
+  QUnit.test('td4/templates/application.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'td3/templates/application.hbs should pass TemplateLint.\n\ntd3/templates/application.hbs\n  3:0  error  Incorrect indentation for `{{outlet}}` beginning at L3:C0. Expected `{{outlet}}` to be at an indentation of 2 but was found at 0.  block-indentation\n');
+    assert.ok(false, 'td4/templates/application.hbs should pass TemplateLint.\n\ntd4/templates/application.hbs\n  2:0  error  Incorrect indentation for `{{outlet}}` beginning at L2:C0. Expected `{{outlet}}` to be at an indentation of 2 but was found at 0.  block-indentation\n');
   });
-  QUnit.test('td3/templates/contacts.hbs', function (assert) {
+  QUnit.test('td4/templates/contacts.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'td3/templates/contacts.hbs should pass TemplateLint.\n\ntd3/templates/contacts.hbs\n  6:4  error  Incorrect indentation for `<tr>` beginning at L6:C4. Expected `<tr>` to be at an indentation of 6 but was found at 4.  block-indentation\n  14:4  error  Incorrect indentation for `{{#each}}` beginning at L14:C4. Expected `{{#each}}` to be at an indentation of 6 but was found at 4.  block-indentation\n  15:4  error  Incorrect indentation for `<tr>` beginning at L15:C4. Expected `<tr>` to be at an indentation of 6 but was found at 4.  block-indentation\n');
+    assert.ok(false, 'td4/templates/contacts.hbs should pass TemplateLint.\n\ntd4/templates/contacts.hbs\n  12:0  error  Incorrect indentation for `<tbody>` beginning at L12:C0. Expected `<tbody>` to be at an indentation of 2 but was found at 0.  block-indentation\n  13:4  error  Incorrect indentation for `{{#each}}` beginning at L13:C4. Expected `{{#each}}` to be at an indentation of 2 but was found at 4.  block-indentation\n  14:4  error  Incorrect indentation for `<tr>` beginning at L14:C4. Expected `<tr>` to be at an indentation of 6 but was found at 4.  block-indentation\n  20:9  error  Incorrect indentation for `td` beginning at L18:C6. Expected `</td>` ending at L20:C9 to be at an indentation of 6 but was found at 4.  block-indentation\n  18:10  error  Incorrect indentation for `<button>` beginning at L18:C10. Expected `<button>` to be at an indentation of 8 but was found at 10.  block-indentation\n  19:6  error  Incorrect indentation for `<button>` beginning at L19:C6. Expected `<button>` to be at an indentation of 8 but was found at 6.  block-indentation\n  26:0  error  Incorrect indentation for `ajouter un contact\n` beginning at L26:C0. Expected `ajouter un contact\n` to be at an indentation of 2 but was found at 0.  block-indentation\n  25:11  error  you must use double quotes in templates  quotes\n');
   });
-  QUnit.test('td3/templates/contacts/add.hbs', function (assert) {
+  QUnit.test('td4/templates/contacts/add.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'td3/templates/contacts/add.hbs should pass TemplateLint.\n\ntd3/templates/contacts/add.hbs\n  4:42  error  you must use double quotes in templates  quotes\n');
+    assert.ok(true, 'td4/templates/contacts/add.hbs should pass TemplateLint.\n\n');
   });
-  QUnit.test('td3/templates/contacts/edit.hbs', function (assert) {
+  QUnit.test('td4/templates/contacts/edit.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'td3/templates/contacts/edit.hbs should pass TemplateLint.\n\n');
+    assert.ok(true, 'td4/templates/contacts/edit.hbs should pass TemplateLint.\n\n');
   });
 });
-define("td3/tests/lint/tests.lint-test", [], function () {
+define("td4/tests/lint/tests.lint-test", [], function () {
   "use strict";
 
   QUnit.module('ESLint | tests');
@@ -86,29 +78,21 @@ define("td3/tests/lint/tests.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'unit/adapters/application-test.js should pass ESLint\n\n');
   });
-  QUnit.test('unit/controllers/contacts-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/controllers/contacts-test.js should pass ESLint\n\n');
-  });
   QUnit.test('unit/controllers/contacts/add-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/controllers/contacts/add-test.js should pass ESLint\n\n');
-  });
-  QUnit.test('unit/controllers/contcats/add-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/controllers/contcats/add-test.js should pass ESLint\n\n');
-  });
-  QUnit.test('unit/models/contact-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/models/contact-test.js should pass ESLint\n\n');
   });
   QUnit.test('unit/models/contacts-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/models/contacts-test.js should pass ESLint\n\n');
   });
-  QUnit.test('unit/routes/contacts-test.js', function (assert) {
+  QUnit.test('unit/models/person-test.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'unit/routes/contacts-test.js should pass ESLint\n\n');
+    assert.ok(true, 'unit/models/person-test.js should pass ESLint\n\n');
+  });
+  QUnit.test('unit/routes/contact-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/contact-test.js should pass ESLint\n\n');
   });
   QUnit.test('unit/routes/contacts/add-test.js', function (assert) {
     assert.expect(1);
@@ -118,18 +102,14 @@ define("td3/tests/lint/tests.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'unit/routes/contacts/edit-test.js should pass ESLint\n\n');
   });
-  QUnit.test('unit/serializers/application-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/serializers/application-test.js should pass ESLint\n\n');
-  });
 });
-define("td3/tests/test-helper", ["td3/app", "td3/config/environment", "@ember/test-helpers", "ember-qunit"], function (_app, _environment, _testHelpers, _emberQunit) {
+define("td4/tests/test-helper", ["td4/app", "td4/config/environment", "@ember/test-helpers", "ember-qunit"], function (_app, _environment, _testHelpers, _emberQunit) {
   "use strict";
 
   (0, _testHelpers.setApplication)(_app.default.create(_environment.default.APP));
   (0, _emberQunit.start)();
 });
-define("td3/tests/unit/adapters/application-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+define("td4/tests/unit/adapters/application-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
   (0, _qunit.module)('Unit | Adapter | application', function (hooks) {
@@ -141,19 +121,7 @@ define("td3/tests/unit/adapters/application-test", ["qunit", "ember-qunit"], fun
     });
   });
 });
-define("td3/tests/unit/controllers/contacts-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
-  "use strict";
-
-  (0, _qunit.module)('Unit | Controller | contacts', function (hooks) {
-    (0, _emberQunit.setupTest)(hooks); // Replace this with your real tests.
-
-    (0, _qunit.test)('it exists', function (assert) {
-      let controller = this.owner.lookup('controller:contacts');
-      assert.ok(controller);
-    });
-  });
-});
-define("td3/tests/unit/controllers/contacts/add-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+define("td4/tests/unit/controllers/contacts/add-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
   (0, _qunit.module)('Unit | Controller | contacts/add', function (hooks) {
@@ -165,32 +133,7 @@ define("td3/tests/unit/controllers/contacts/add-test", ["qunit", "ember-qunit"],
     });
   });
 });
-define("td3/tests/unit/controllers/contcats/add-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
-  "use strict";
-
-  (0, _qunit.module)('Unit | Controller | contcats/add', function (hooks) {
-    (0, _emberQunit.setupTest)(hooks); // Replace this with your real tests.
-
-    (0, _qunit.test)('it exists', function (assert) {
-      let controller = this.owner.lookup('controller:contcats/add');
-      assert.ok(controller);
-    });
-  });
-});
-define("td3/tests/unit/models/contact-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
-  "use strict";
-
-  (0, _qunit.module)('Unit | Model | contact', function (hooks) {
-    (0, _emberQunit.setupTest)(hooks); // Replace this with your real tests.
-
-    (0, _qunit.test)('it exists', function (assert) {
-      let store = this.owner.lookup('service:store');
-      let model = store.createRecord('contact', {});
-      assert.ok(model);
-    });
-  });
-});
-define("td3/tests/unit/models/contacts-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+define("td4/tests/unit/models/contacts-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
   (0, _qunit.module)('Unit | Model | contacts', function (hooks) {
@@ -203,18 +146,31 @@ define("td3/tests/unit/models/contacts-test", ["qunit", "ember-qunit"], function
     });
   });
 });
-define("td3/tests/unit/routes/contacts-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+define("td4/tests/unit/models/person-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
-  (0, _qunit.module)('Unit | Route | contacts', function (hooks) {
+  (0, _qunit.module)('Unit | Model | person', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks); // Replace this with your real tests.
+
+    (0, _qunit.test)('it exists', function (assert) {
+      let store = this.owner.lookup('service:store');
+      let model = store.createRecord('person', {});
+      assert.ok(model);
+    });
+  });
+});
+define("td4/tests/unit/routes/contact-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | contact', function (hooks) {
     (0, _emberQunit.setupTest)(hooks);
     (0, _qunit.test)('it exists', function (assert) {
-      let route = this.owner.lookup('route:contacts');
+      let route = this.owner.lookup('route:contact');
       assert.ok(route);
     });
   });
 });
-define("td3/tests/unit/routes/contacts/add-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+define("td4/tests/unit/routes/contacts/add-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
   (0, _qunit.module)('Unit | Route | contacts/add', function (hooks) {
@@ -225,7 +181,7 @@ define("td3/tests/unit/routes/contacts/add-test", ["qunit", "ember-qunit"], func
     });
   });
 });
-define("td3/tests/unit/routes/contacts/edit-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+define("td4/tests/unit/routes/contacts/edit-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
   (0, _qunit.module)('Unit | Route | contacts/edit', function (hooks) {
@@ -236,27 +192,8 @@ define("td3/tests/unit/routes/contacts/edit-test", ["qunit", "ember-qunit"], fun
     });
   });
 });
-define("td3/tests/unit/serializers/application-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
-  "use strict";
-
-  (0, _qunit.module)('Unit | Serializer | application', function (hooks) {
-    (0, _emberQunit.setupTest)(hooks); // Replace this with your real tests.
-
-    (0, _qunit.test)('it exists', function (assert) {
-      let store = this.owner.lookup('service:store');
-      let serializer = store.serializerFor('application');
-      assert.ok(serializer);
-    });
-    (0, _qunit.test)('it serializes records', function (assert) {
-      let store = this.owner.lookup('service:store');
-      let record = store.createRecord('application', {});
-      let serializedRecord = record.serialize();
-      assert.ok(serializedRecord);
-    });
-  });
-});
-define('td3/config/environment', [], function() {
-  var prefix = 'td3';
+define('td4/config/environment', [], function() {
+  var prefix = 'td4';
 try {
   var metaName = prefix + '/config/environment';
   var rawConfig = document.querySelector('meta[name="' + metaName + '"]').getAttribute('content');
@@ -274,6 +211,6 @@ catch(err) {
 
 });
 
-require('td3/tests/test-helper');
+require('td4/tests/test-helper');
 EmberENV.TESTS_FILE_LOADED = true;
 //# sourceMappingURL=tests.map
