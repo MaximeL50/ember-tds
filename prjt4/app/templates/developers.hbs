@@ -1,0 +1,30 @@
+{{#link-to "developers.new" class="ui button"}}
+  Ajouter un contact...
+{{/link-to}}
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Identity</th>
+    <th scope="col" class="text-center">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each model as |dev|}}
+    <tr>
+      <td>{{dev.identity}}</td>
+      <td class="text-center">
+        {{#link-to "developers.edit" dev class="ui icon circular button"}}
+          {{!-- <button class="ui icon circular button"> --}}
+            {{!-- <i class="ui icon edit"></i> --}}
+            <i class="ui edit icon"></i>
+          {{!-- </button> --}}
+        {{/link-to}}
+        <button {{action "delete" dev}} class="ui icon circular button">
+          <i class="ui icon remove"></i>
+        </button>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+{{outlet}}
