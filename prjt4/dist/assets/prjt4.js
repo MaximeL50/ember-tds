@@ -25,7 +25,7 @@
 
     urlForDeleteRecord(id, modelName) {
       modelName = (0, _emberInflector.pluralize)(modelName);
-      return this.get('host') + '/' + this.get('namespace') + `/${modelName}/*?filter={_id:'${id}'}`;
+      return this.get('host') + '/' + this.get('namespace') + "/".concat(modelName, "/*?filter={_id:'").concat(id, "'}");
     }
 
   });
@@ -1609,17 +1609,21 @@
   _exports.default = void 0;
 
   var _default = Ember.Route.extend({
-    templateName: 'developers/new',
+    templateName: 'developers/edit',
 
     afterModel(model) {
-      model = Ember.Object.create({
-        copy: {
-          identity: 'aaa'
-        }
-      });
+      let copy = Ember.Object.create(model.toJSON());
+      Ember.set(model, 'copy', copy);
       return model;
-    }
+    },
 
+    actions: {
+      save(model) {
+        model.setProperties(JSON.parse(JSON.stringify(model.copy)));
+        model.save().then(this.transitionTo('developers'));
+      }
+
+    }
   });
 
   _exports.default = _default;
@@ -1749,8 +1753,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "UoyK/INJ",
-    "block": "{\"symbols\":[\"dev\"],\"statements\":[[4,\"link-to\",[\"developers.new\"],[[\"class\"],[\"ui button\"]],{\"statements\":[[0,\"  Ajouter un contact...\\n\"]],\"parameters\":[]},null],[7,\"table\"],[11,\"class\",\"table\"],[9],[0,\"\\n  \"],[7,\"thead\"],[11,\"class\",\"thead-dark\"],[9],[0,\"\\n  \"],[7,\"tr\"],[9],[0,\"\\n    \"],[7,\"th\"],[11,\"scope\",\"col\"],[9],[0,\"Identity\"],[10],[0,\"\\n    \"],[7,\"th\"],[11,\"scope\",\"col\"],[11,\"class\",\"text-center\"],[9],[0,\"Actions\"],[10],[0,\"\\n  \"],[10],[0,\"\\n  \"],[10],[0,\"\\n  \"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"model\"]]],null,{\"statements\":[[0,\"    \"],[7,\"tr\"],[9],[0,\"\\n      \"],[7,\"td\"],[9],[1,[22,1,[\"identity\"]],false],[10],[0,\"\\n      \"],[7,\"td\"],[11,\"class\",\"text-center\"],[9],[0,\"\\n\"],[4,\"link-to\",[\"developers.edit\",[22,1,[]]],[[\"class\"],[\"ui icon circular button\"]],{\"statements\":[[0,\"            \"],[7,\"i\"],[11,\"class\",\"ui edit icon\"],[9],[10],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"        \"],[7,\"button\"],[11,\"class\",\"ui icon circular button\"],[9],[0,\"\\n          \"],[7,\"i\"],[11,\"class\",\"ui icon remove\"],[9],[10],[0,\"\\n        \"],[3,\"action\",[[22,0,[]],\"delete\",[22,1,[]]]],[10],[0,\"\\n      \"],[10],[0,\"\\n    \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[1,[21,\"outlet\"],false]],\"hasEval\":false}",
+    "id": "e4XYo7Cc",
+    "block": "{\"symbols\":[\"dev\"],\"statements\":[[4,\"link-to\",[\"developers.new\"],[[\"class\"],[\"ui button orange\"]],{\"statements\":[[0,\"  Ajouter un contact...\\n\"]],\"parameters\":[]},null],[7,\"table\"],[11,\"class\",\"table\"],[9],[0,\"\\n  \"],[7,\"thead\"],[11,\"class\",\"thead-dark\"],[9],[0,\"\\n  \"],[7,\"tr\"],[9],[0,\"\\n    \"],[7,\"th\"],[11,\"scope\",\"col\"],[9],[0,\"Identity\"],[10],[0,\"\\n    \"],[7,\"th\"],[11,\"scope\",\"col\"],[11,\"class\",\"text-center\"],[9],[0,\"Actions\"],[10],[0,\"\\n  \"],[10],[0,\"\\n  \"],[10],[0,\"\\n  \"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"model\"]]],null,{\"statements\":[[0,\"    \"],[7,\"tr\"],[9],[0,\"\\n      \"],[7,\"td\"],[9],[1,[22,1,[\"identity\"]],false],[10],[0,\"\\n      \"],[7,\"td\"],[11,\"class\",\"text-center\"],[9],[0,\"\\n\"],[4,\"link-to\",[\"developers.edit\",[22,1,[]]],[[\"class\"],[\"ui icon circular button\"]],{\"statements\":[[0,\"            \"],[7,\"i\"],[11,\"class\",\"ui edit icon\"],[9],[10],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"        \"],[7,\"button\"],[11,\"class\",\"ui icon circular button\"],[9],[0,\"\\n          \"],[7,\"i\"],[11,\"class\",\"ui icon remove\"],[9],[10],[0,\"\\n        \"],[3,\"action\",[[22,0,[]],\"delete\",[22,1,[]]]],[10],[0,\"\\n      \"],[10],[0,\"\\n    \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[1,[21,\"outlet\"],false]],\"hasEval\":false}",
     "meta": {
       "moduleName": "prjt4/templates/developers.hbs"
     }
@@ -1767,8 +1771,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "ix4uxanK",
-    "block": "{\"symbols\":[],\"statements\":[[1,[21,\"outlet\"],false]],\"hasEval\":false}",
+    "id": "ZK0geS2v",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"class\",\"ui header\"],[9],[0,\"Ajout/modif dev\"],[10],[0,\"\\n\\n\"],[1,[27,\"input\",null,[[\"value\",\"class\"],[[23,[\"model\",\"copy\",\"identity\"]],\"ui input\"]]],false],[0,\"\\n\"],[7,\"button\"],[11,\"class\",\"ui primary button\"],[9],[0,\"Enregistrer\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"model\"]]]],[10],[0,\"\\n\\n\"],[1,[21,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "prjt4/templates/developers/edit.hbs"
     }
@@ -1785,8 +1789,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "1iWJHzQr",
-    "block": "{\"symbols\":[],\"statements\":[[1,[27,\"input\",null,[[\"value\",\"placeholder\"],[[23,[\"model\",\"copy\",\"identity\"]],\"Identity\"]]],false],[0,\"\\n\"],[7,\"button\"],[11,\"class\",\"ui success button\"],[9],[3,\"action\",[[22,0,[]],\"save\",[23,[\"model\"]]]],[10],[0,\"\\n\"],[1,[21,\"outlet\"],false]],\"hasEval\":false}",
+    "id": "5try1vzE",
+    "block": "{\"symbols\":[],\"statements\":[[1,[27,\"input\",null,[[\"value\",\"placeholder\"],[[23,[\"model\",\"copy\",\"identity\"]],\"Identity\"]]],false],[0,\"\\n\"],[7,\"button\"],[11,\"class\",\"ui success button blue\"],[9],[0,\"Ajouter\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"model\"]]]],[10],[0,\"\\n\"],[1,[21,\"outlet\"],false]],\"hasEval\":false}",
     "meta": {
       "moduleName": "prjt4/templates/developers/new.hbs"
     }
@@ -1801,7 +1805,7 @@
 try {
   var metaName = prefix + '/config/environment';
   var rawConfig = document.querySelector('meta[name="' + metaName + '"]').getAttribute('content');
-  var config = JSON.parse(unescape(rawConfig));
+  var config = JSON.parse(decodeURIComponent(rawConfig));
 
   var exports = { 'default': config };
 
@@ -1817,7 +1821,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("prjt4/app")["default"].create({"name":"prjt4","version":"0.0.0"});
+            require("prjt4/app")["default"].create({"name":"prjt4","version":"0.0.0+3d00ff64"});
           }
         
 //# sourceMappingURL=prjt4.map
