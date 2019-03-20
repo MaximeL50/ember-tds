@@ -22,10 +22,13 @@ Installation EmberJs:
   Lancez votre serveur à l'aide de la commande: ember serve
   
 Les projets:
-  Projet1: permets de saisir un text et d'afficher les caractères restants de l'enregistrer et d'effacer le contenu
-  Projet2: Lister les produits disponibles et en ajouter
-  Projet3:
-  Projet4:
+ Projet1: permets de saisir un text et d'afficher les caractères restants de l'enregistrer et d'effacer le contenu
+  
+ Projet2: Lister les produits disponibles et en ajouter
+ 
+ Projet3:
+  
+ Projet4:
             
    
     
