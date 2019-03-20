@@ -79,7 +79,7 @@ define("prjt4/tests/lint/templates.template.lint-test", [], function () {
   });
   QUnit.test('prjt4/templates/developers/new.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'prjt4/templates/developers/new.hbs should pass TemplateLint.\n\nprjt4/templates/developers/new.hbs\n  2:14  error  you must use double quotes in templates  quotes\n');
+    assert.ok(false, 'prjt4/templates/developers/new.hbs should pass TemplateLint.\n\nprjt4/templates/developers/new.hbs\n  3:14  error  you must use double quotes in templates  quotes\n');
   });
 });
 define("prjt4/tests/lint/tests.lint-test", [], function () {

@@ -1771,8 +1771,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "ZK0geS2v",
-    "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"class\",\"ui header\"],[9],[0,\"Ajout/modif dev\"],[10],[0,\"\\n\\n\"],[1,[27,\"input\",null,[[\"value\",\"class\"],[[23,[\"model\",\"copy\",\"identity\"]],\"ui input\"]]],false],[0,\"\\n\"],[7,\"button\"],[11,\"class\",\"ui primary button\"],[9],[0,\"Enregistrer\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"model\"]]]],[10],[0,\"\\n\\n\"],[1,[21,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "L7sz59UG",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"class\",\"ui header\"],[9],[0,\"Modif Developpeur\"],[10],[0,\"\\n\\n\"],[1,[27,\"input\",null,[[\"value\",\"class\"],[[23,[\"model\",\"copy\",\"identity\"]],\"ui input\"]]],false],[0,\"\\n\"],[7,\"button\"],[11,\"class\",\"ui primary button\"],[9],[0,\"Enregistrer\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"model\"]]]],[10],[0,\"\\n\\n\"],[1,[21,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "prjt4/templates/developers/edit.hbs"
     }
@@ -1789,8 +1789,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "5try1vzE",
-    "block": "{\"symbols\":[],\"statements\":[[1,[27,\"input\",null,[[\"value\",\"placeholder\"],[[23,[\"model\",\"copy\",\"identity\"]],\"Identity\"]]],false],[0,\"\\n\"],[7,\"button\"],[11,\"class\",\"ui success button blue\"],[9],[0,\"Ajouter\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"model\"]]]],[10],[0,\"\\n\"],[1,[21,\"outlet\"],false]],\"hasEval\":false}",
+    "id": "AvNWWS/S",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"class\",\"ui header\"],[9],[0,\"Ajout Developpeur\"],[10],[0,\"\\n\"],[1,[27,\"input\",null,[[\"value\",\"placeholder\"],[[23,[\"model\",\"copy\",\"identity\"]],\"Identity\"]]],false],[0,\"\\n\"],[7,\"button\"],[11,\"class\",\"ui success button blue\"],[9],[0,\"Ajouter\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"model\"]]]],[10],[0,\"\\n\"],[1,[21,\"outlet\"],false]],\"hasEval\":false}",
     "meta": {
       "moduleName": "prjt4/templates/developers/new.hbs"
     }
