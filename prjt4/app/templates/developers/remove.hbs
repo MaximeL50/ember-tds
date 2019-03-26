@@ -1,0 +1,11 @@
+<div class="form-group col-md-6 ">
+  <p>confirmer la suppression de {{model.copy.identity}} ?</p>
+  <button {{ action "delete" model}} class="ui button green">
+    Supprimer
+  </button>
+  {{#link-to "developers" class="ui button red"}}
+    Annuler
+  {{/link-to}}
+</div>
+
+{{outlet}}

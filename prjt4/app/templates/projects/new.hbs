@@ -1,0 +1,47 @@
+<div class="form-group col-md-6 ">
+  <label for="NameAdd">Nom</label>
+  {{input type = "text" class="form-control " id="NameAdd" aria-describedby="addNameDescription" value=model.copy.name placeholder="Nom"}}
+  <small id="addNameDescription" class="form-text text-muted">C'est ici que vous ajouter le nom d'un projet</small>
+
+  <br/>
+
+  <label for="DescriptifAdd">Description</label>
+  {{textarea class="form-control" id="DescriptifAdd" aria-describedby="addDescriptifDescription" value=model.copy.descriptif placeholder="descriptif"}}
+  <small id="addDescriptifDescription" class="form-text text-muted">Décrivez rapidement ou avec des mots clé votre projet</small>
+
+  <br/>
+
+  <label for="StartDateAdd">Date De Début</label>
+  {{input type="date" class="form-control" id="StartDateAdd" aria-describedby="addStartDateDescription" value = model.copy.startDate }}
+  <small id="addStartDateDescription" class="form-text text-muted">La date du début de votre projet </small>
+
+  <br/>
+
+  <label for="DueDateAdd">Date de Fin</label>
+  {{input type="date" class="form-control" id="DueDateAdd" aria-describedby="addDueDateDescription" value = model.copy.dueDate }}
+  <small id="addDueDateDescription" class="form-text text-muted">La date de fin de votre projet </small>
+
+  <br/>
+
+  <div class="field">
+    <label>Propriétaire</label>
+    {{#ui-dropdown class="selection" selected=model.copy.owner onChange=(action (mut model.copy.owner)) as |execute mapper|}}
+      <div class="default text">{{if model.owner model.owner.identity "Propriétaire"}}</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        {{#each model.devs as |owner|}}
+          <div data-value="{{map-value mapper owner}}" class="item">
+            {{owner.identity}}
+          </div>
+        {{/each}}
+      </div>
+    {{/ui-dropdown}}
+  </div>
+  <br/>
+  <button class='ui button green'{{action "save" model}}>Ajouter</button>
+  {{#link-to "projects" class="ui button red"}}
+    Annuler
+  {{/link-to}}
+</div>
+
+{{outlet}}

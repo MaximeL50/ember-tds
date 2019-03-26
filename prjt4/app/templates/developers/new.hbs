@@ -1,4 +1,11 @@
-<div class="ui header">Ajout Developpeur</div>
-{{input value=model.copy.identity placeholder="Identity"}}
-<button class='ui success button blue'{{action "save" model}}>Ajouter</button>
+<div class="form-group col-md-6 ">
+  <label for="identityAdd">Identité</label>
+  {{input type = "text" class="form-control " id="identityAdd" aria-describedby="addDescription" value=model.copy.identity placeholder="identité"}}
+  <small id="addDescription" class="form-text text-muted">C'est ici que vous ajouter un développeur</small>
+  <button class='ui button blue'{{action "save" model}}>Ajouter</button>
+  {{#link-to "developers" class="ui button grey"}}
+    Annuler
+  {{/link-to}}
+</div>
+
 {{outlet}}

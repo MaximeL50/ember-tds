@@ -1,0 +1,62 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav">
+       <li class="nav-item">
+         {{#link-to "developers" class="ui button orange"}}
+           <i class="user icon"></i> Voir les développeurs
+         {{/link-to}}
+       </li>
+       <li class="nav-item">
+         {{#link-to "projects" class="ui button orange"}}
+           <i class="file alternate icon"></i>Voir les projets
+         {{/link-to}}
+       </li>
+     </ul>
+  </div>
+</nav>
+
+<div style="padding-left:50px;" class = "col-md-10">
+
+<br/>
+
+<table class="table table-hover ui yellow table selectable">
+  <thead class="thead-blue">
+    <tr>
+      <th scope="col">Nom </th>
+      <th scope="col">Descriptif</th>
+      <th scope="col">Date de début</th>
+      <th scope="col">Date de fin</th>
+      <th scope="col">Propriétaire</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |project|}}
+    <tr>
+      <th scope="row">{{project.name}}</th>
+      <td>{{project.descriptif}}</td>
+      <td>{{moment-format project.startDate "DD/MM/YY"}}</td>
+      <td>{{moment-format project.dueDate "DD/MM/YY"}}</td>
+      <td>{{ project.owner.identity}}</td>
+
+      <td>
+        {{#link-to "projects.edit" project class="ui icon circular button"}}
+          <i class="ui edit icon"></i>
+        {{/link-to}}
+        {{#link-to "projects.remove" project class="ui icon circular button"}}
+          <i class="ui remove icon"></i>
+        {{/link-to}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<br/>
+{{#link-to "projects.new" class="ui button green"}}
+  Ajouter un projet
+{{/link-to}}
+<br/>
+<br/>
+{{outlet}}
+
+</div>
