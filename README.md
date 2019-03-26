@@ -25,6 +25,7 @@ Installation EmberJs:
     
     ember install semantic-ui-ember
     
+    ember install ember-cli-uuid
   Pour créer un projet:
     - ember new Project1
     
