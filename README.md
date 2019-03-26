@@ -19,6 +19,12 @@ Installation EmberJs:
     
     -npm install -g ember-cli@2.18
     
+    ember install ember-bootstrap
+    
+    ember install ember-font-awesome
+    
+    ember install semantic-ui-ember
+    
   Pour créer un projet:
     - ember new Project1
     
