@@ -37,9 +37,14 @@ Les projets:
   
  Projet2: Lister les produits disponibles et en ajouter
  
- Projet3:
+ Projet3: Gestion d'une liste de contact ( filtrer ,ajouter, modifier , supprimer)
   
- Projet4:
-            
+ Projet4: Gestion d'une base de données MongoDb à travers une application web pour faire fonctionner l'application il faudra:
+ - Une base de donnée mongo db avec une collection boards contenant une collection developers et projects(la data est contenu dans 
+ le dossier)
+ - Les prérequis donnés plus haut
+ - ember install ember-moment
+ - ember install ember-cli-uuid
+
    
     
