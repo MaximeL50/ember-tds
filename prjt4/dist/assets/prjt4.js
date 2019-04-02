@@ -1745,6 +1745,17 @@ define('prjt4/models/application', ['exports', 'ember-data'], function (exports,
   });
   exports.default = _emberData.default.Model.extend({});
 });
+define('prjt4/models/developer', ['exports', 'ember-data'], function (exports, _emberData) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _emberData.default.Model.extend({
+        identity: _emberData.default.attr('string'),
+        projects: _emberData.default.hasMany('projects', { inverse: 'owner' })
+    });
+});
 define('prjt4/models/developers', ['exports', 'ember-data'], function (exports, _emberData) {
     'use strict';
 
@@ -1965,12 +1976,15 @@ define('prjt4/routes/projects/edit', ['exports'], function (exports) {
     afterModel: function afterModel(model) {
       var copy = Ember.Object.create(model.toJSON());
       Ember.set(model, 'copy', copy);
+      var devs = this.store.findAll('developers');
+      Ember.set(model, 'devs', devs);
       return model;
     },
 
     actions: {
       save: function save(model) {
-        model.setProperties(JSON.parse(JSON.stringify(model.copy)));
+
+        model.setProperties(model.copy);
 
         model.save().then(this.transitionTo('projects'));
       }
@@ -2232,6 +2246,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("prjt4/app")["default"].create({"name":"prjt4","version":"0.0.0+73c536e3"});
+  require("prjt4/app")["default"].create({"name":"prjt4","version":"0.0.0+bd6a57a8"});
 }
 //# sourceMappingURL=prjt4.map

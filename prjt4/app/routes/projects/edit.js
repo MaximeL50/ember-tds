@@ -6,11 +6,14 @@ export default Route.extend({
   afterModel( model){
     let copy = EmberObject.create(model.toJSON());
     set(model,'copy', copy);
+    let devs = this.store.findAll('developers');
+    set(model,'devs',devs);
     return model;
   },
   actions:{
     save(model){
-      model.setProperties(JSON.parse(JSON.stringify(model.copy)));
+
+      model.setProperties(model.copy);
 
       model.save().then(this.transitionTo('projects'));
     }

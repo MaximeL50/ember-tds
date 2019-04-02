@@ -20,6 +20,11 @@ define('prjt4/tests/app.lint-test', [], function () {
     assert.ok(true, 'models/application.js should pass ESLint\n\n');
   });
 
+  QUnit.test('models/developer.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/developer.js should pass ESLint\n\n');
+  });
+
   QUnit.test('models/developers.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'models/developers.js should pass ESLint\n\n');
