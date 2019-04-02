@@ -1,6 +1,7 @@
 # ember-tds
 Bonjour bienvenue sur mes projets ember-js
 Principales spécificités d'EmberJs : 
+
   - Développement en couche par extension du HTML
   - architecture MVC → MRC (Model Route Component)
   - data-binding bidirectionnel
@@ -33,6 +34,7 @@ Installation EmberJs:
   Lancez votre serveur à l'aide de la commande: ember serve
   
 Les projets:
+
  Projet1: permets de saisir un text et d'afficher les caractères restants de l'enregistrer et d'effacer le contenu
   
  Projet2: Lister les produits disponibles et en ajouter
