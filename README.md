@@ -55,8 +55,8 @@ Debug: si vous n'avez pas réussi l'installation:
 
 * Créer un projet du même nom que celui sur le git ember new nomduprojet
 * Insérer l'app du projet git dans votre nouveau projet ( supprimer celui du nouveau avant)
-* Relancer tout les commandes citées plus haut
+* Relancer toutes les commandes citées plus haut
 * Lancez votre projet à l'aide de ember serve
-* Accedez votre page à l'aide de la commande http://localhost:4200
+* Accedez à votre page à l'aide de la commande http://localhost:4200
    
     
