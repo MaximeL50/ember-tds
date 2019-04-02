@@ -11,13 +11,13 @@ Principales spécificités d'EmberJs :
  
 Installation EmberJs:
   Vérifier l'Installation de node et npm (en invite de commande) :
-    -node -v
+    node -v
     
-    -npm -v
+    npm -v
     
-    -npm install npm@latest -g
+    npm install npm@latest -g
     
-    -npm install -g ember-cli@2.18
+    npm install -g ember-cli@2.18
     
     ember install ember-bootstrap
     
